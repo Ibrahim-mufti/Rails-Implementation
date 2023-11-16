@@ -1,0 +1,19 @@
+<div class="container mx-auto">
+  <div class="text-left"  id="<%= dom_id user %>">
+    <table class="border-collapse w-3/4 mx-[40px] mb-[15px] ">
+       <tr class="text-center">
+			<th class="border-[1px] border-slate-600 px-[8px] py-[8px]">Users Id</th>
+			<th class="border-[1px] border-slate-600 px-[8px] py-[8px]">First name</th>
+			<th class="border-[1px] border-slate-600 px-[8px] py-[8px]">Last name</th>
+			<th class="border-[1px] border-slate-600 px-[8px] py-[8px]">Email</th>
+			<%# <th class="border-[1px] border-slate-600 px-[8px] py-[8px]">Functionality</th> %>
+       </tr>
+       <tr>
+		<td class="border-[1px] border-slate-600 px-[8px] py-[8px]"><p> <%= user.phone_number %> </p></td>
+		<td class="border-[1px] border-slate-600 px-[8px] py-[8px]"><p> <%= user.first_name %></p></td>
+		<td class="border-[1px] border-slate-600 px-[8px] py-[8px]"><p> <%= user.last_name %></p></td>
+		<td class="border-[1px] border-slate-600 px-[8px] py-[8px]"><p> <%= user.Email %></p></td>
+      </tr>
+    </table>
+  </div>
+</div>

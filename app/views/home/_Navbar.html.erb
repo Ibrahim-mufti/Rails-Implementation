@@ -1,0 +1,25 @@
+<nav class="w-[100%] fixed py-4 dark:bg-gray-900">
+  <div class="container max-w-[1140px] mx-auto">
+    <div class="flex justify-between">
+        <%= link_to root_path, class:"flex items-center" do %>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CRUD PROJECT</span>
+        <% end %>
+        <div class="items-center">
+          <ul class="flex justify-around font-bold">
+            <% if authentication_signed_in? %>
+            <li class="mx-3 hover:text-sky-900 transition-colors duration-300 ease-in"><%= link_to "Home", root_path, class:"cursor-pointer"%></li>
+            <li class="mx-3 hover:text-sky-900 transition-colors duration-300 ease-in"><%= link_to "Employees", employees_path, class:"cursor-pointer" %></li>
+            <li class="mx-3 hover:text-sky-900 transition-colors duration-300 ease-in"><%= link_to "Users", users_path%></li>
+            <li class="mx-3 hover:text-sky-900 transition-colors duration-300 ease-in"><%= link_to "Add Users", users_new_path%></li>
+            <% end %>
+              <li class="mx-3 hover:text-sky-900 transition-colors duration-300 ease-in"><%= link_to "Sign in",  new_authentication_session_path%></li>
+
+            <% if authentication_signed_in? %>
+              <li class="mx-3 hover:text-sky-900 transition-colors duration-300 ease-in"><%= button_to "Sign Out",  destroy_authentication_session_path, method: :delete %></li>
+            <% end %>
+          </ul>
+        </div>  
+    </div>
+  </div>
+</nav>
+

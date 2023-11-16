@@ -1,0 +1,38 @@
+<h2>Log in</h2>
+<section class="py-20">
+  <div class="container max-w-[25%] mx-auto text-left ">
+    <div class="p-14 rounded-[20px] bg-slate-700">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field ">
+          <p class="mb-2 text-xl"><%= f.label :email %></p>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"py-2 px-2 w-[100%] bg-slate-800 text-white outline-none burder-none rounded-md" %>
+        </div>
+
+        <div class="field">
+          <p class="mb-2 text-xl"><%= f.label :password %></p>
+          <%= f.password_field :password, autocomplete: "current-password", class:"py-2 px-2 w-[100%] bg-slate-800 text-white outline-none burder-none rounded-md" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field my-2>
+            <%= f.check_box :remember_me, class:"bg-slate-800" %>
+            <%= f.label :remember_me, class:"text-xl" %>
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+              <%= link_to "Forgot your password?", new_password_path(resource_name), class:"ml-12 hover:text-red-600 transition-colors duration-300 ease-in" %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="actions text-right">
+          <%= f.submit "Log in", class:"my-4 py-3 px-6 text-xl rounded-[15px] hover:bg-slate-800 transition-colors duration-300 ease-in" %>
+        </div>
+      <% end %>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <div class="text-center">
+          <p class="text-lg mb-5">Dont have an account yet?</p>
+          <%= link_to "Sign up", new_registration_path(resource_name),class:"my-4 py-3 px-6 text-xl rounded-[15px] hover:bg-slate-800 transition-colors duration-300 ease-in" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

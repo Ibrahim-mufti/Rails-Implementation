@@ -1,0 +1,36 @@
+<h2>Sign up</h2>
+<section class="py-20">
+  <div class="container max-w-[25%] mx-auto text-left ">
+    <div class="p-14 rounded-[20px] bg-slate-700">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field">
+        <p class="mb-2 text-xl"><%= f.label :email %></p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"py-2 px-2 w-[100%] bg-slate-800 text-white outline-none burder-none rounded-md" %>
+      </div>
+
+      <div class="field">
+        <p class="inline text-xl"><%= f.label :password %></p>
+        <% if @minimum_password_length %>
+        <p class="inline ml-5">(<%= @minimum_password_length %> characters minimum)</p>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class:"mt-2 py-2 px-2 w-[100%] bg-slate-800 text-white outline-none burder-none rounded-md" %>
+      </div>
+
+      <div class="field">
+        <p class="mb-2 text-xl"><%= f.label :confirm_password %></p>
+        <%= f.password_field :confirm_password, autocomplete: "new-password", class:"py-2 px-2 w-[100%] bg-slate-800 text-white outline-none burder-none rounded-md" %>
+      </div>
+      <div class="actions text-right">
+        <%= f.submit "Sign up", class:"my-4 py-3 px-6 text-xl rounded-[15px] hover:bg-slate-800 transition-colors duration-300 ease-in" %>
+      </div>
+    <% end %>
+      <div class="text-center text-lg">
+        <%- if controller_name != 'sessions' %>
+          <p class="text-lg mb-5">Already have an Account!</p>
+          <%= link_to "Sign in", new_session_path(resource_name),class:"my-4 py-3 px-6 text-xl rounded-[15px] hover:bg-slate-800 transition-colors duration-300 ease-in" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

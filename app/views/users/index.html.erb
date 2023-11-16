@@ -1,0 +1,18 @@
+<section class="py-20">
+  <div class="container mx-auto text-left ">
+    <p style="color: green"><%= notice %></p>
+
+    <h1 class="text-center mb-5 text-4xl">Users</h1>
+      	<div id="users">
+        	<% @users.each do |user| %>
+            <% if user.user_auth_no == current_authentication.id%>
+              <%= render user %>
+              <div class="flex justify-end space-x-4 w-[75%]">
+                <p class="w-[120px] py-2 px-4 rounded-[6px] hover:bg-slate-700 transition-colors duration-300 ease-in"> <%= link_to "Show user", user %> </p>
+                  <%= link_to "New user", new_user_path, class:"py-2 px-4 rounded-[6px] hover:bg-slate-700 transition-colors duration-300 ease-in" %>
+              </div>
+            <% end %>
+        	<% end %>
+    	</div>
+  </div>
+</section>

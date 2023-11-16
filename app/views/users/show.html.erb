@@ -1,0 +1,13 @@
+<section class="py-20">
+  	<div class="container mx-auto text-left">
+    	<p style="color: green"><%= notice %></p>
+
+    	<%= render @user %>
+
+		<div class="flex w-3/4 justify-end space-x-4">
+			<p class="py-2 px-4 rounded-[6px] hover:bg-slate-700 transition-colors duration-300 ease-in"><%= link_to "Edit this user", edit_user_path(@user) %></p> 
+			<p class="py-2 px-4 rounded-[6px] hover:bg-slate-700 transition-colors duration-300 ease-in"><%= link_to "Back to users", users_path %></p>
+			<%= button_to "Destroy this user", @user, method: :delete, class:"py-2 px-4 rounded-[6px] hover:bg-slate-700 transition-colors duration-300 ease-in" %>
+		</div>
+  	</div>
+</section>

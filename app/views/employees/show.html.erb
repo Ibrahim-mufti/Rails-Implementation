@@ -1,0 +1,35 @@
+<section class="py-20">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl mb-5">Employee Information</h2>
+        <table class="min-w-full bg-slate-800 border border-gray-300">
+        <thead>
+            <tr>
+                <th class="py-2 px-4 border-b border-r">Name</th>
+                <th class="py-2 px-4 border-b border-r">Age</th>
+                <th class="py-2 px-4 border-b border-r">Occupation</th>
+                <th class="py-2 px-4 border-b">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="py-2 px-4 border-b border-r">
+                    <%= @employee.name%>
+                </td>
+                <td class="py-2 px-4 border-b border-r"> 
+                    <%= @employee.age %>    
+                </td>
+                <td class="py-2 px-4 border-b border-r">
+                    <%= @employee.occupation %>
+                </td>
+                <td class="py-2 px-4 border-b">
+                    <div class="flex flex-row justify-around">
+                        <%= link_to "Back", employees_path, class:"text-blue-500 hover:underline"%>
+                        <%= link_to "Edit", edit_employee_path, class:"text-blue-500 hover:underline"%>
+                        <%= button_to "delete", employee_path, method:"delete", class:"text-red-500 hover:underline ml-2" %>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</section>

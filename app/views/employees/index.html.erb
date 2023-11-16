@@ -1,0 +1,31 @@
+<section class="py-20">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl mb-5">Employees</h2>
+        <table class="min-w-full bg-slate-800 border border-gray-300">
+        <thead>
+            <tr>
+            <th class="py-2 px-4 border-b border-r">Name</th>
+            <th class="py-2 px-4 border-b">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @employees.each do |emp| %>
+            <tr>
+                <td class="py-2 px-4 border-b border-r">
+                    <%= link_to emp.name, employee_path(emp), class: "text-blue-500 hover:underline" %>
+                </td>
+                <td class="py-2 px-4 border-b">
+                    <div class="flex flex-row justify-around">
+                        <%= link_to "Edit", edit_employee_path(emp), method: 'get', class: "text-blue-500 hover:underline" %>
+                        <%= button_to "Delete", employee_path(emp), method: 'delete', class: "text-red-500 hover:underline ml-2" %></p>
+                    </div>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>
+        <div class="text-center mt-5">
+            <%= link_to "Add New Employee", new_employee_path, class:" py-2 px-4 rounded-[10px] hover:bg-slate-700 transition-colors duration-300 ease-in "%>
+        </div>
+    </div>
+</section>

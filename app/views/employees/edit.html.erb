@@ -1,0 +1,11 @@
+<section class="py-20">
+    <div class="container mx-auto text-center">
+        <h2> Update Employee detail</h2>
+        <%= form_with model: @employee do |emp| %>
+            <%= emp.text_field :name, placeholder:"Enter your name", class:"bg-slate-700 my-4 py-2 px-4"%> <br>
+            <%= emp.text_field :age, placeholder:"Enter your age", class:"bg-slate-700 my-4 py-2 px-4"%> <br>
+            <%= emp.text_field :occupation, placeholder:"Enter your occupation", class:"bg-slate-700 my-4 py-2 px-4" %><br>
+            <%= emp.submit class:"mt-4 py-2 px-4 rounded-[10px] cursor-pointer hover:bg-slate-700 transition-colors duration-300 ease-in"%>
+        <% end %>
+    </div>
+</section>
